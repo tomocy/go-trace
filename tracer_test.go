@@ -21,3 +21,8 @@ func TestNew(t *testing.T) {
 		t.Errorf("have %s, but want %s", have, want)
 	}
 }
+
+func TestOff(t *testing.T) {
+	silentTracer := Off()
+	silentTracer.Trace("data")
+}
