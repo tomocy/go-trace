@@ -13,10 +13,11 @@ func TestNew(t *testing.T) {
 		return
 	}
 
-	want := "hello, tracer\n"
-	tracer.Trace(want)
+	s := "hello, tracer"
+	want := s + "\n"
+	tracer.Trace(s)
 	have := buf.String()
 	if have != want {
-		t.Errorf("have %v, but want %v", have, want)
+		t.Errorf("have %s, but want %s", have, want)
 	}
 }
